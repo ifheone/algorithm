@@ -1,3 +1,4 @@
-function solution(num1, num2) {
-  return num1 % num2;
+function solution(age) {
+  const answer = age - 1;
+  return 2022 - answer;
 }
