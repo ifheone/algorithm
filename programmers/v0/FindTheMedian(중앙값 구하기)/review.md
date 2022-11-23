@@ -1,38 +1,29 @@
-배열 두 배 만들기
-https://school.programmers.co.kr/learn/courses/30/lessons/120809
+중앙 값 구하기
+https://school.programmers.co.kr/learn/courses/30/lessons/120811
 
 문제 설명
-정수 배열 numbers가 매개변수로 주어집니다. numbers의 각 원소에 두배한 원소를 가진 배열을 return하도록 solution 함수를 완성해주세요.
+중앙값은 어떤 주어진 값들을 크기의 순서대로 정렬했을 때 가장 중앙에 위치하는 값을 의미합니다. 예를 들어 1, 2, 7, 10, 11의 중앙값은 7입니다. 정수 배열 array가 매개변수로 주어질 때, 중앙값을 return 하도록 solution 함수를 완성해보세요.
 
 제한사항
--10,000 ≤ numbers의 원소 ≤ 10,000
-1 ≤ numbers의 길이 ≤ 1,000
+array의 길이는 홀수입니다.
+0 < array의 길이 < 100
+-1,000 < array의 원소 < 1,000
 
 풀이시간
-3분
+15분
+
+풀이 방법
+
+1. 배열 정리(오름차순, 내림차순)
+   > sort 함수
+2. 배열 개수및 올림처리
+   > (전체 배열 개수 / 2)를 사용하여 올림 처리
+   > 길이가 항상 홀수라서 가능
+3. 값 도출
+   > 배열 - 1 사용하여 처리
 
 다른 방법
---- reduce 사용
-function solution(numbers) {
-return numbers.reduce((a, b) => [...a, b * 2], []);
-}
-
---- map 사용
-const solution = (numbers) => numbers.map((number) => number \* 2)
-
---- map 사용
-function solution(numbers) {
-return numbers.map(i=>i\*2);
-}
-
---- push 사용
-function solution(numbers) {
-const results = [];
-
-    numbers.map((item) => {
-        results.push(item*2);
-    })
-
-    return results;
-
+--- Math.floor 사용
+function solution(array) {
+return array.sort((a, b) => a - b)[Math.floor(array.length / 2)];
 }
