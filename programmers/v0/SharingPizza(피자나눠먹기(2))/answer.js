@@ -1,9 +1,9 @@
 function solution(n) {
   var answer = 0;
-  if (n <= 7) {
-    return 1;
-  } else {
-    return Math.ceil(n / 7);
+  for (let i = 1; i <= n; i++) {
+    if ((i * 6) % n === 0) {
+      return i;
+    }
   }
   return answer;
 }
