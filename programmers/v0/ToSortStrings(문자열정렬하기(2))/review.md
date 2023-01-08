@@ -12,9 +12,10 @@ https://school.programmers.co.kr/learn/courses/30/lessons/120911
 
 풀이 방법
 
-1. 문자열에서 정규식으로 replace를 통해 영문제거
-2. split()를 사용해 배열로 만든 후 오름차순으로 정렬
-3. 정렬된 값을 숫자로 변경하기 위해 map을 사용
+1. 문자열을 소문자로 변환 후 배열로 변경
+2. sort()메서드를 통해 정렬 후 문자열로 변경
+
+my_string.toLowerCase().split("").sort().join("");
 
 다른 방법
 function solution(s) {
